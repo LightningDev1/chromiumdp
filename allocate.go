@@ -350,24 +350,32 @@ func findExecPath() string {
 	var locations []string
 	switch runtime.GOOS {
 	case "darwin":
+		// Mac
 		locations = []string{
-			// Mac
 			"/Applications/Chromium.app/Contents/MacOS/Chromium",
 			"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
 		}
 	case "windows":
+		// Windows
 		locations = []string{
-			// Windows
+			// Chrome
 			"chrome",
 			"chrome.exe", // in case PATHEXT is misconfigured
 			`C:\Program Files (x86)\Google\Chrome\Application\chrome.exe`,
 			`C:\Program Files\Google\Chrome\Application\chrome.exe`,
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Google\Chrome\Application\chrome.exe`),
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Chromium\Application\chrome.exe`),
+
+			// Opera
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Programs\Opera\opera.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Programs\Opera GX\opera.exe`),
+
+			// Brave
+			`C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`,
 		}
 	default:
+		// Unix-like
 		locations = []string{
-			// Unix-like
 			"headless_shell",
 			"headless-shell",
 			"chromium",
