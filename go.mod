@@ -1,4 +1,4 @@
-module github.com/LightningDev1/chromedp
+module github.com/LightningDev1/chromiumdp
 
 go 1.16
 
