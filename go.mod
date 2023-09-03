@@ -1,4 +1,4 @@
-module github.com/chromedp/chromedp
+module github.com/LightningDev1/chromedp
 
 go 1.16
 
