@@ -366,12 +366,23 @@ func findExecPath() string {
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Google\Chrome\Application\chrome.exe`),
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Chromium\Application\chrome.exe`),
 
+			// Edge
+			`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`,
+			`C:\Program Files\Microsoft\Edge\Application\msedge.exe`,
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\Edge\Application\msedge.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\Edge Beta\Application\msedge.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\Edge Dev\Application\msedge.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\Edge SxS\Application\msedge.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\EdgeCanary\Application\msedge.exe`),
+			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Microsoft\EdgeInsider\Application\msedge.exe`),
+
 			// Opera
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Programs\Opera\opera.exe`),
 			filepath.Join(os.Getenv("USERPROFILE"), `AppData\Local\Programs\Opera GX\opera.exe`),
 
 			// Brave
 			`C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`,
+			`C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application\brave.exe`,
 		}
 	default:
 		// Unix-like
